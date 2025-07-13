@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Image Slider | Autoplay with Navigation Visibility</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="img-slider">
+            <div class="slide active">
+                <img src="bg_2.jpg" alt="">
+                <div class="info">
+                    <h2>Slide 1</h2>
+                    <p>This beautifully composed flat-lay image captures the essence of rustic, wholesome dining. At the heart of the scene is a golden, glossy burger bun nestled on a wooden board, hinting at a freshly made, gourmet sandwich filled with crisp lettuce and creamy sauce. Surrounding it are thoughtfully arranged ingredients — fresh tomatoes, delicate sprigs of thyme, shallots, leafy greens, and a bowl of house-made chips.
+
+                    The rough texture of the wooden table adds a weathered charm, enhancing the visual storytelling with an earthy, natural feel. Scattered salt crystals and breadcrumbs give the shot an organic, unstyled look — as if the meal has just been assembled moments before. It's a scene that speaks to slow food, handcrafted quality, and the beauty of simple, well-sourced ingredients coming together.<br><br> The picture also evokes a cozy, hearty meal experience — perfect for a relaxed picnic, rustic kitchen, or food blog background.The focus is on a delicious burger with a glossy, golden-brown bun, sitting atop a round wooden board. Around it, there are fresh ingredients like leafy greens, whole tomatoes, herbs (possibly thyme), and small shallots, suggesting a farm-to-table or homemade vibe.
+                        
+                    </p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="bg_3.jpg" alt="">
+                <div class="info">
+                    <h2>Slide 2</h2>
+                    <p>This photo conveys a story of collaboration, preparation, and the quiet buzz that often precedes a busy shift in a modern, thoughtfully designed café.<br>This image captures a candid, behind-the-scenes moment inside a stylish, dimly lit café or coffee shop. A group of baristas, all wearing aprons, are gathered around the counter, deeply engaged in conversation—possibly discussing their tasks, sharing a moment of teamwork, or preparing for service. The lighting is warm and focused, casting soft shadows that create a cozy and intimate ambiance.<br><br>This image captures a candid and cinematic moment inside a café or coffeehouse during a quiet pause before the rush. A group of baristas, dressed in uniform aprons, are gathered behind the counter in a dimly lit workspace, engaged in focused conversation and preparation. The lighting is intentionally dramatic — with a single overhead light casting a warm glow, creating pockets of shadow and intimacy.
+
+                     The surrounding shelves are adorned with artisan ceramics and minimalist decor, adding an earthy, handcrafted aesthetic to the space. There’s a sense of routine, coordination, and unspoken rhythm — the kind that exists behind the scenes in well-run establishments. This moment tells a deeper story of dedication, teamwork, and the unseen hustle that powers every great cup served.
+                    </p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="bg_4.jpg" alt="">
+                <div class="info">
+                    <h2>Slide 3</h2>
+                    <p>This image showcases a beautifully designed, modern restaurant interior that exudes warmth and sophistication. The space is well-lit with a combination of industrial-style pendant lights and ambient wall lighting, creating a cozy yet contemporary atmosphere. The wooden flooring and furniture bring an earthy, organic feel that complements the restaurant's tasteful decor.<br><br>This image captures the calm before the dining rush—a serene and inviting space where patrons can enjoy a refined yet relaxed meal experience.<br><br>Carefully arranged tables are set with elegant dinnerware, suggesting readiness for a fine dining experience. The soft, ambient lighting and earthy color palette make the space feel intimate yet spacious — ideal for both casual gatherings and special occasions. Subtle accents like indoor plants and minimalist wall shelves enhance the natural, relaxed atmosphere. It’s a place that invites guests to slow down, savor the moment, and enjoy good food in a thoughtfully designed setting.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="insta-1.jpg" alt="">
+                <div class="info">
+                    <h2>Slide 4</h2>
+                    <p>This lively and vibrant image captures the essence of a trendy, modern café bustling with activity. The space is filled with natural light pouring in through large windows, giving the café a warm and welcoming atmosphere. People of various ages and styles are engaged in different activities—chatting, reading, working on laptops, or simply enjoying their drinks—which reflects the café's role as a social hub and a creative workspace.<br><br>
+                    People are immersed in different activities: some are deep in conversation, others are absorbed in their laptops or simply enjoying a quiet cup of coffee.
+
+                    Industrial lighting, minimalist shelving, and large windows spilling in natural light give the space a trendy yet welcoming character. There's a relaxed energy in the scene — the kind that invites people to linger, work, connect, or just unwind. It's more than a café; it's a shared creative and social space where individuality and community coexist effortlessly.
+                    </p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="image_4.jpg" alt="">
+                <div class="info">
+                    <h2>Slide 5</h2>
+                    <p>This cheerful and inviting image captures a friendly barista or bakery staff member proudly holding a plate with a slice of layered cake. Dressed in a striped apron and white shirt, she radiates warmth and enthusiasm as she gives a confident thumbs-up, suggesting that the dessert.<br><br>In this delightful café scene, a smiling woman exudes charm and confidence as she presents a beautifully plated slice of cake. Dressed in a neat striped apron, she gives a hearty thumbs-up — a gesture that radiates enthusiasm and satisfaction, as if to say, "You’ve got to try this!"
+                    <br><br>
+                    The backdrop, filled with coffee machines, takeaway cups, and pastries, tells the story of a bustling yet cozy establishment where quality and care are part of every detail. Her expression and posture suggest pride in her work and a genuine joy in sharing something sweet and homemade. It’s a moment that captures not just great food, but the warmth and personality behind it.</p>
+                </div>
+            </div>
+            <div class="navigation ">
+                <div class="btn active"></div>
+                <div class="btn active"></div>
+                <div class="btn active"></div>
+                <div class="btn active"></div>
+                <div class="btn active"></div>
+            </div>
+
+        </div>
+         <script>
+            var slides = document.querySelectorAll('.slide');
+            var btns = document.querySelectorAll('.btn');
+            let currentSlide = 0;
+        
+            function manualNav(index) {
+              slides.forEach((slide) => slide.classList.remove('active'));
+              btns.forEach((btn) => btn.classList.remove('active'));
+        
+              slides[index].classList.add('active');
+              btns[index].classList.add('active');
+              currentSlide = index;
+            }
+        
+            btns.forEach((btn, index) => {
+              btn.addEventListener("click", () => {
+                manualNav(index);
+              });
+            });
+        
+            function autoplay() {
+              setInterval(() => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                manualNav(currentSlide);
+              }, 3000); // change slide every 3 seconds
+            }
+        
+            autoplay();
+          </script>
+    </body>
+</html>
